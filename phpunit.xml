@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="bootstrap.php">
+    <testsuites>
+        <testsuite name="sonar-library">
+            <directory>library</directory>
+        </testsuite>
+        <testsuite name="sonar-workers">
+            <directory>workers</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+       <whitelist>
+           <directory suffix=".php">../application</directory>
+           <directory suffix=".php">../library</directory>
+           <directory suffix=".php">../workers</directory>
+       </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="reports/coverage.xml"/>
+        <log type="coverage-html" target="reports/coverage" yui="true"/>
+        <log type="junit" target="reports/log.xml"/>
+    </logging>
+</phpunit>
